@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.allan.mapper.CommentMapper" >
+    <resultMap id="selectCommentByUsername" type="comment">
+        <id property="id" column="cid"/>
+        <result property="content" column="content"/>
+        <result property="comdate" column="comdate"/>
+        <association property="news" javaType="news">
+            <id property="id" column="nid"/>
+            <result property="name" column="name"/>
+            <result property="picturePath" column="picture_path"/>
+        </association>
+        <association property="user" javaType="user">
+            <id property="id" column="uid"/>
+            <result property="username" column="username"/>
+            <result property="headPortrait" column="head_portrait"/>
+        </association>
+    </resultMap>
+    <select id="selectUserComment" resultMap="selectCommentByUsername">
+        SELECT t1.id as cid,t1.content,t1.comdate,t2.id as nid,t2.`name`,t2.picture_path,t3.id as uid,t3.username,t3.head_portrait
+        FROM `comment` t1,news t2,`user` t3
+        WHERE t3.username=#{username}
+        AND t3.id = t1.user_id
+        AND t1.news_id = t2.id
+    </select>
+    <delete id="delete" parameterType="java.lang.Integer">
+        delete from comment where id=#{id}
+    </delete>
+    <insert id="insert" parameterType="comment">
+        insert into comment (user_id, news_id, content, comdate) values (#{userId},#{newsId},#{content},#{comdate})
+    </insert>
+    <resultMap id="selectCommentByNewId" type="comment">
+        <id property="id" column="cid"/>
+        <result property="content" column="content"/>
+        <result property="comdate" column="comdate"/>
+        <association property="user" javaType="user">
+            <id property="id" column="uid"/>
+            <result property="nickname" column="nickname"/>
+            <result property="headPortrait" column="head_portrait"/>
+        </association>
+    </resultMap>
+    <select id="selectCommentByNid" resultMap="selectCommentByNewId">
+        select t1.id as cid,t1.content,t1.comdate,t2.id as uid,t2.nickname,t2.head_portrait
+        FROM `comment` t1,`user` t2,news t3
+        WHERE t1.user_id=t2.id
+        AND t1.news_id=t3.id
+        AND t3.id=#{id}
+    </select>
+</mapper>

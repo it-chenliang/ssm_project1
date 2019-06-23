@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/mvc
+    http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
+    <!-- 配置SpringMVC -->
+    <!-- 1.开启SpringMVC注解模式 -->
+    <!-- 简化配置：
+        (1)自动注册DefaultAnootationHandlerMapping,AnotationMethodHandlerAdapter
+        (2)提供一些列：数据绑定，数字和日期的format @NumberFormat, @DateTimeFormat, xml,json默认读写支持
+    -->
+    <mvc:annotation-driven />
+
+    <!-- 2.静态资源默认servlet配置
+        (1)加入对静态资源的处理：js,gif,png
+        (2)允许使用"/"做整体映射
+     -->
+    <mvc:default-servlet-handler/>
+
+    <!-- 3.配置jsp 显示ViewResolver -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/jsp/" />
+        <property name="suffix" value=".jsp" />
+    </bean>
+
+    <!-- 4.扫描web相关的bean -->
+    <context:component-scan base-package="cn.allan.controller" />
+
+    <!--文件上传解析器:id必须是multipartResolver，原因是源代码固定了改名字-->
+    <!-- 定义文件上传解析器 -->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设定默认编码 -->
+        <property name="defaultEncoding" value="UTF-8" />
+        <!-- 设定文件上传的最大值5MB，5*1024*1024 -->
+        <property name="maxUploadSize" value="5242880" />
+        <property name="maxInMemorySize" value="4096" />
+    </bean>
+
+    <!--配置拦截器-->
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/user/**/*"/>
+            <!--排除登录这个URI-->
+            <mvc:exclude-mapping path="/user/login"/>
+            <mvc:exclude-mapping path="/user/logout"/>
+            <mvc:exclude-mapping path="/user/register"/>
+            <mvc:exclude-mapping path="/user/checkUsername"/>
+            <bean class="cn.allan.interceptor.UserInterceptor"></bean>
+        </mvc:interceptor>
+        <!--管理员拦截器-->
+        <mvc:interceptor>
+            <mvc:mapping path="/type/**/*"/>
+            <bean class="cn.allan.interceptor.ManageInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/news/**/*"/>
+            <mvc:exclude-mapping path="/news/type"/>
+            <mvc:exclude-mapping path="/news/item1"/>
+            <mvc:exclude-mapping path="/news/lastNews"/>
+            <mvc:exclude-mapping path="/news/recentNews"/>
+            <mvc:exclude-mapping path="/news/international"/>
+            <mvc:exclude-mapping path="/news/clickRank"/>
+            <mvc:exclude-mapping path="/news/detail"/>
+            <mvc:exclude-mapping path="/news/viewCount"/>
+            <mvc:exclude-mapping path="/news/view"/>
+            <mvc:exclude-mapping path="/news/carousel"/>
+            <mvc:exclude-mapping path="/news/typeInfo"/>
+            <bean class="cn.allan.interceptor.ManageInterceptor"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/manage/**/*"/>
+            <!--排除登录这个URI-->
+            <mvc:exclude-mapping path="/manage/login"/>
+            <mvc:exclude-mapping path="/manage/logout"/>
+            <bean class="cn.allan.interceptor.ManageInterceptor"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+</beans>

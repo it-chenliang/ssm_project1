@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.allan.mapper.UserMapper" >
+    <select id="selectByUserNameAndPwd" resultType="user">
+        select *
+        from user
+        where username = #{username}
+        and password = #{password}
+    </select>
+    <insert id="addUser" parameterType="user">
+        insert into user (username,password,email,create_time,last_login_time) values (#{username},#{password},#{email},#{createTime},#{lastLoginTime})
+    </insert>
+    <select id="selectByUsername" resultType="user">
+        select * from user where username=#{username}
+    </select>
+
+    <update id="updateUserInfo" parameterType="user">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        update user
+        <set>
+            name = #{name},nickname = #{nickname},tel = #{tel},gender = #{gender},email = #{email},birthday = #{birthday},
+            <if test="headPortrait != null and headPortrait != ''">
+                head_portrait = #{headPortrait},
+            </if>
+        </set>
+        <where>
+            username = #{username}
+        </where>
+    </update>
+    <select id="selectPassword" resultType="java.lang.String">
+        select password
+        from user
+        where username=#{username}
+    </select>
+
+    <update id="updateUserPassword" parameterType="user">
+        UPDATE `user` SET `password`=#{password} WHERE username=#{username}
+    </update>
+
+    <update id="uploadLoginTime" parameterType="user">
+        update user set last_login_time=#{lastLoginTime} where username=#{username}
+    </update>
+</mapper>

@@ -1,0 +1,97 @@
+.add-content{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.add-content-input{
+    margin-top: 30px;
+}
+.submit,.reset{
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
+.form-control1{
+    width: 450px;
+}
+.form-control2{
+    width: 450px;
+}
+.form-control3{
+    width: 450px;
+}
+.form-control4{
+    width: 400px;
+}
+.form-control5{
+    width: 400px;
+}
+.form-control6{
+    width: 250px;
+}
+.form-control7{
+    width: 200px;
+}
+.form-control8{
+    width: 150px;
+}
+
+/* 文件上传按钮 */
+.file {
+    position: relative;
+    line-height: 34px;
+    width: 250px;
+    height: 34px;
+}
+.userdefined-file {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 300px;
+    height: 34px;
+    line-height: 40px;
+    font-size: 0;  /*应对子元素为 inline-block 引起的外边距*/
+}
+.userdefined-file input[type="text"] {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 14px;
+    padding-left: 14px;
+    width: 170px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.userdefined-file button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 80px;
+    text-align: center;
+    height: 34px;
+    line-height: 34px;
+    font-size: 14px;
+    background-color: #f54;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    opacity: 0;
+    width: 250px;
+    height: 34px;
+    line-height: 34px;
+    cursor: pointer;
+}
+
+.btn{
+    width: 82px;
+}

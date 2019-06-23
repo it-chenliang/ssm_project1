@@ -1,0 +1,264 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.header{
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    background-color: #FFFFFF;
+}
+.logo{
+    width: 200px;
+    height: 60px;
+    float: left;
+    text-align: center;
+}
+.menu{
+    max-width: 800px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.user{
+    width: 200px;
+    height: 60px;
+    float: right;
+    text-align: center;
+}
+.userInfo-link{
+    width: 200px;
+    height: auto;
+    z-index: 9999;
+}
+.userInfo-link>li{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+}
+.userInfo-link>li:nth-child(1){
+    width: 150px;
+}
+.userInfo-link>li:nth-child(2){
+    width: 50px;
+}
+.userInfo-link li a img{
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.menu-link:link,
+.menu-link:visited,
+.menu-link:hover,
+.menu-link:active{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+#menu{
+    width: 800px;
+    height: 60px;
+}
+#menu>li{
+    width: 100px;
+    text-align: center;
+    font-weight: bolder;
+    float: left;
+}
+#user>a{
+    line-height: 60px;
+}
+#user>a>img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.body{
+    width: 1200px;
+    height: auto;
+    min-height: 600px;
+    margin: 20px auto;
+}
+.news-title{
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+}
+.news-source{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+}
+.news-source>p>span{
+    margin-right: 40px;
+    color: #999999;
+}
+.news-picture{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+}
+.news-content{
+    width: 800px;
+    height: auto;
+    margin: 20px auto;
+    color: #333333;
+}
+.news-content p{
+    line-height: 35px;
+    font-size: 16px;
+}
+.news-author{
+    width: 800px;
+    height: 40px;
+    line-height: 40px;
+    margin: 0 auto;
+}
+.news-author label{
+    font-weight: bolder;
+    font-size: 16px;
+}
+.news-keyword{
+    width: 800px;
+    height: 40px;
+    margin: 0 auto;
+}
+.keyword-btn{
+    padding: 0 15px;
+    margin-right: 20px;
+    height: 18px;
+    outline: none;
+    background-color: #ddd;
+    opacity: 0.7;
+    border:1px solid #ddd;
+    border-radius: 15px;
+    font-size: 14px;
+    line-height: 18px;
+}
+.write-comment{
+    width: 800px;
+    height: 210px;
+    background-color: #F1F1F1;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    padding: 0 20px;
+}
+.comment-count{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.input-comment{
+    width: 100%;
+    height: 100px;
+    background-color: #ccc;
+}
+.comment-count>span:nth-child(1){
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: '仿宋';
+    color: #444;
+}
+.comment-count>span>span{
+    color: red;
+}
+.comment-content{
+    width: 100%;
+    height: 100%;
+    resize: none;
+    padding: 10px;
+}
+.comment-btn{
+    width: 100%;
+    height: 50px;
+    padding: 8px 0;
+}
+.pub-comment{
+    background-color: #FD482C;
+    border: 1px solid #FD482C;
+    float: right;
+}
+.comment-list{
+    width: 800px;
+    height: auto;
+    margin: 10px auto;
+    border: 1px solid #DDDDDD;
+    padding: 0 20px 10px 20px;
+}
+.comment-list-header{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+}
+.comment-list-header>span{
+    font-size: 18px;
+    font-weight: bolder;
+    font-family: '仿宋';
+    color: #444;
+}
+.all-comment{
+    width: 100%;
+    height: auto;
+}
+.all-comment>li{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+.all-comment>li>div{
+    float: left;
+}
+.user-img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+    background-color: #00FFFF;
+    border-radius: 50%;
+}
+.user-img img{
+    width: 80px;
+    height: 80px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.comment-info{
+    width: 640px;
+    height: auto;
+    min-height: 80px;
+    max-height: 200px;
+}
+.comment-info>div:nth-child(1),
+.comment-info>div:nth-child(3){
+    height: 26px;
+    line-height: 26px;
+}
+.comment-info>div:nth-child(2){
+    height: auto;
+    min-height: 30px;
+    max-height: 150px;
+    line-height: 30px;
+}
+.footer{
+    width: 1200px;
+    height: 75px;
+    line-height: 75px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #DDDDDD;
+}

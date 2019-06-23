@@ -1,0 +1,16 @@
+.add-content{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.add-content-input{
+    margin-top: 30px;
+}
+.form-control{
+    width: 300px;
+}
+.submit,.reset{
+    float: left;
+    width: 100px;
+    text-align: center;
+    margin-top: 20px;
+}

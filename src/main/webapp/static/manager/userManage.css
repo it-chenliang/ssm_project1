@@ -1,0 +1,26 @@
+.table{
+    width: 90%;
+    text-align: center;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    border-collapse: collapse;
+    margin-left: 30px;
+}
+th{
+    text-align: center;
+    height: 45px;
+    background-color: #555;
+    color: #FFFFFF;
+}
+th:nth-child(1){
+    width: 120px;
+}
+th:nth-child(2){
+    width: 140px;
+}
+th:nth-child(3){
+    width: 240px;
+}
+table,th,td{
+    border: 1px solid lightgray;
+}

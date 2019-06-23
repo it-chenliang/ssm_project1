@@ -1,0 +1,66 @@
+.userInfo-content-detail{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+.user-detail{
+    width: 100%;
+    height: auto;
+}
+.user-detail>li{
+    float: left;
+    height: 50px;
+    width: 425px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    position: relative;
+}
+input[type='text'],input[type='date']{
+    outline: none;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    padding-left: 120px;
+}
+.button{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border:none;
+    border-right: 1px solid #DDDDDD;
+    color: #ffffff;
+}
+.btn{
+    height: 40px;
+    width: 100px;
+    background-color: #DDDDDD;
+    margin-right: 30px;
+    color: #ffffff;
+}
+.security-manage{
+    width: 100%;
+    height: auto;
+}
+.security-manage>li{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+input[type='password']{
+    outline: none;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    padding-left: 120px;
+}
+.glyphicon-remove-circle,
+.glyphicon-ok-circle{
+    margin-left: 10px;
+    margin-right: 5px;
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.allan.mapper.NewsMapper" >
+  <select id="add" resultType="news">
+        INSERT INTO news (name,content,keyword,pubdate,type_id,picture_path,author,publisher,source,click)
+        VALUES (#{name},#{content},#{keyword},#{pubdate},#{typeId},#{picturePath},#{author},#{publisher},#{source},#{click})
+    </select>
+
+    <resultMap id="selectAll" type="news">
+        <id property="id" column="nid"/>
+        <result property="name" column="name"/>
+        <result property="author" column="author"/>
+        <result property="content" column="content"/>
+        <result property="keyword" column="keyword"/>
+        <result property="picturePath" column="picture_path"/>
+        <result property="source" column="source"/>
+        <result property="pubdate" column="pubdate"/>
+        <result property="publisher" column="publisher"/>
+        <result property="click" column="click"/>
+        <!--持有type-->
+        <association property="type" javaType="type">
+            <id property="id" column="tid"/>
+            <result property="name" column="typeName"/>
+        </association>
+    </resultMap>
+    <select id="select" resultMap="selectAll">
+        select t1.id as nid,t1.name,t1.content,t1.author,t1.type_id,t1.keyword,t1.picture_path,t1.source,t1.pubdate,
+        t1.publisher,t1.click,t2.id as tid,t2.name as typeName
+        from news t1,type t2
+        where t1.type_id=t2.id order by t1.id DESC
+    </select>
+
+    <select id="selectOne" resultMap="selectAll">
+        select t1.id as nid,t1.name,t1.content,t1.author,t1.type_id,t1.keyword,t1.picture_path,t1.source,t1.pubdate,
+        t1.publisher,t1.click,t2.id as tid,t2.name as typeName
+        from news t1,type t2
+        where t1.type_id=t2.id and t1.id = #{id}
+    </select>
+
+    <select id="update">
+        update news
+        <set>
+            <if test="picturePath != null and picturePath != ''">
+                picture_path = #{picturePath},
+            </if>
+            name=#{name},content=#{content},author=#{author},type_id=#{typeId},keyword=#{keyword},
+            source=#{source},pubdate=#{pubdate},publisher=#{publisher}
+        </set>
+        where id=#{id}
+    </select>
+
+    <select id="delete">
+        delete from news where id = #{id}
+    </select>
+    <select id="batchDelete">
+        delete from news where id in
+        <foreach collection="list" open="(" close=")" item="item" separator="," index="index">
+            #{item}
+        </foreach>
+    </select>
+    <select id="fuzzyQuery" resultMap="selectAll">
+        select t1.id as nid,t1.name,t1.content,t1.author,t1.type_id,t1.keyword,t1.picture_path,t1.source,t1.pubdate,
+        t1.publisher,t1.click,t2.id as tid,t2.name as typeName
+        from news t1,type t2
+        where concat(IFNULL(t1.`name`,''),IFNULL(content,''),IFNULL(author,''),IFNULL(source,''),IFNULL(t2.name,'')) like concat("%",#{text},"%")
+        and t1.type_id=t2.id
+        order by t1.id ASC
+    </select>
+
+    <select id="item1" resultMap="selectAll">
+      select t1.id as nid,t1.name,t1.content,t1.author,t1.type_id,t1.keyword,t1.picture_path,t1.source,t1.pubdate,
+        t1.publisher,t1.click,t2.id as tid,t2.name as typeName
+        from news t1,type t2
+        where t1.type_id=t2.id and t2.name = #{typeName}
+        LIMIT 0,7
+    </select>
+    <select id="lastNews" resultType="news">
+      SELECT * FROM news where id in (select MAX(id) FROM news)
+    </select>
+    <select id="recent" resultType="news">
+        SELECT * FROM news ORDER BY  pubdate DESC LIMIT 0,8
+    </select>
+    <select id="international" resultMap="selectAll">
+        select t1.id as nid,t1.name,t1.content,t1.author,t1.type_id,t1.keyword,t1.picture_path,t1.source,t1.pubdate,
+        t1.publisher,t1.click,t2.id as tid,t2.name as typeName
+        from news t1,type t2
+        where t1.type_id=t2.id and t2.name = #{typeName}
+        order by click DESC
+        LIMIT 0,3
+    </select>
+    <select id="updateClick" resultType="news">
+        update news set click=click+1 where id=#{id}
+    </select>
+    <select id="clickRank" resultType="news">
+        select * from news order by click limit 0,8
+    </select>
+    <select id="click" resultType="news">
+        update news set click=#{count} where id=#{id}
+    </select>
+    <select id="carousel" resultType="news">
+        select id,name,picture_path
+        from news
+        where news.source="百度"
+        limit 0,3
+    </select>
+    <select id="selectByTypeId" resultType="news">
+        select t1.id,t1.name,t1.content,t1.picture_path,t1.source,t1.click,t1.pubdate,t1.publisher,t1.keyword,t1.type_id
+        from news t1
+        where t1.type_id = #{typeId}
+    </select>
+</mapper>

@@ -1,0 +1,336 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.header{
+    width: 1200px;
+    height: 60px;
+    margin: 0 auto;
+    line-height: 60px;
+    background-color: #FFFFFF;
+}
+.logo{
+    width: 200px;
+    height: 60px;
+    float: left;
+    text-align: center;
+}
+.menu{
+    max-width: 800px;
+    height: 60px;
+    overflow: hidden;
+    float: left;
+}
+.user{
+    width: 200px;
+    height: 60px;
+    float: right;
+    text-align: center;
+}
+.userInfo-link{
+    width: 200px;
+    height: auto;
+    z-index: 9999;
+}
+.userInfo-link>li{
+    float: left;
+    height: 60px;
+    line-height: 60px;
+    overflow: hidden;
+}
+.userInfo-link>li:nth-child(1){
+    width: 150px;
+}
+.userInfo-link>li:nth-child(2){
+    width: 50px;
+}
+.userInfo-link li a img{
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.menu-link:link,
+.menu-link:visited,
+.menu-link:hover,
+.menu-link:active{
+    text-decoration: none;
+    color: #000;
+    font-size: 18px;
+}
+#menu{
+    width: 800px;
+    height: 60px;
+}
+#menu>li{
+    width: 100px;
+    text-align: center;
+    font-weight: bolder;
+    float: left;
+}
+#user>a{
+    line-height: 60px;
+}
+#user>a>img{
+    width: 40px;
+    height: 40px;
+    margin-top: 10px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.body{
+    width: 1200px;
+    height: auto;
+    margin: 20px auto;
+}
+.body a:link,.body a:visited{
+    text-decoration: none;
+    color: #555;
+}
+.body a:hover{
+    text-decoration: underline;
+}
+.userInfo-menu{
+    float: left;
+    width: 220px;
+    height: 500px;
+    background-color: #FFFFFF;
+}
+.userInfo-content{
+    float: left;
+    margin-left: 30px;
+    width: 950px;
+    background-color: #FFFFFF;
+    min-height: 550px;
+}
+.userInfo-menu-header{
+    width: 100%;
+    height: 160px;
+    margin-top: 30px;
+}
+.userInfo-menu-header-img{
+    width: 100%;
+    height: 120px;
+    padding: 5px 50px;
+}
+.userInfo-menu-header-name{
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    font-size: 18px;
+}
+.userInfo-menu-header-img>img{
+    width: 110px;
+    height: 110px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+.userInfo-bar{
+    width: 220px;
+    height: auto;
+}
+.userInfo-bar>li{
+    width: 220px;
+    height: 56px;
+    line-height: 56px;
+    text-align: center;
+}
+li:hover{
+    cursor: pointer;
+}
+.active{
+    background-color: #DDDDDD;
+}
+.glyphicon{
+    margin-right: 10px;
+}
+.userInfo-content-header{
+    width: 100%;
+    height: 45px;
+    padding: 0 20px;
+    line-height: 45px;
+    background-color: #DDDDDD;
+    color: #fff;
+}
+.userInfo-content-detail{
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+.user-detail{
+    width: 100%;
+    height: auto;
+}
+.user-detail>li{
+    float: left;
+    height: 50px;
+    width: 425px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+    position: relative;
+}
+input[type='text'],input[type='date']{
+    outline: none;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    padding-left: 120px;
+}
+.button{
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    outline: none;
+    border:none;
+    border-right: 1px solid #DDDDDD;
+    color: #ffffff;
+}
+.btn{
+    height: 40px;
+    width: 100px;
+    background-color: #DDDDDD;
+    margin-right: 30px;
+    color: #ffffff;
+}
+
+/* 文件上传按钮 */
+.file {
+    position: relative;
+    line-height: 34px;
+    width: 250px;
+    height: 34px;
+}
+.userdefined-file {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 0;  /*应对子元素为 inline-block 引起的外边距*/
+}
+.userdefined-file input[type="text"] {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 14px;
+    padding-left: 14px;
+    width: 300px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.userdefined-file button {
+    display: inline-block;
+    vertical-align: middle;
+    width: 100px;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
+    background-color: #DDDDDD;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+}
+.file input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    opacity: 0;
+    width: 400px;
+    height: 50px;
+    line-height: 50px;
+    cursor: pointer;
+}
+.user-form{
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+
+.all-comment{
+    width: 100%;
+    height: auto;
+}
+.all-comment>li{
+    width: 100%;
+    height: auto;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+.all-comment>li>div{
+    float: left;
+}
+.user-img{
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+.user-img img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.comment-info{
+    width: 640px;
+    height: auto;
+    min-height: 80px;
+    max-height: 200px;
+}
+.comment-info>div:nth-child(1){
+    font-size: 18px;
+    font-weight: bolder;
+}
+.comment-info>div:nth-child(1),
+.comment-info>div:nth-child(3){
+    height: 26px;
+    line-height: 26px;
+}
+.comment-info>div:nth-child(2){
+    height: auto;
+    min-height: 30px;
+    max-height: 150px;
+    line-height: 30px;
+}
+.security-manage{
+    width: 100%;
+    height: auto;
+}
+.security-manage>li{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    position: relative;
+}
+input[type='password']{
+    outline: none;
+    width: 400px;
+    height: 50px;
+    border: 1px solid #ddd;
+    line-height: 50px;
+    padding-left: 120px;
+}
+.glyphicon-remove-circle,
+.glyphicon-ok-circle{
+    margin-left: 10px;
+    margin-right: 5px;
+}

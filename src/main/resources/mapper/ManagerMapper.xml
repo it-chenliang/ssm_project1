@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.allan.mapper.ManagerMapper" >
+    <select id="selectManager" resultType="manager">
+        select *
+        from manager
+        where username = #{username}
+        and password = #{password}
+    </select>
+    <select id="selectByUsername" resultType="manager">
+        select * from manager where username=#{username}
+    </select>
+    <update id="updateManagerInfo" parameterType="manager">
+        update manager
+        set name=#{name},nickname=#{nickname},tel=#{tel},email=#{email}
+        where username=#{username}
+    </update>
+    <update id="updatePassword" parameterType="manager">
+        update manager SET `password`=#{password} WHERE username=#{username}
+    </update>
+    <select id="selectAllUser" resultType="user">
+        select * from user
+    </select>
+    <delete id="deleteUser" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+    <resultMap id="selectComment" type="comment">
+        <id property="id" column="cid"/>
+        <result property="content" column="content"/>
+        <result property="comdate" column="comdate"/>
+        <association property="user" javaType="user">
+            <id property="id" column="uid"/>
+            <result property="username" column="username"/>
+        </association>
+        <association property="news" javaType="news">
+            <id property="id" column="nid"/>
+            <result property="name" column="name"/>
+        </association>
+    </resultMap>
+    <select id="selectAllComment" resultMap="selectComment">
+        select t1.id as cid,t1.content,t1.comdate,t2.id as uid,t2.username,t3.id as nid,t3.`name`
+        FROM `comment` t1,`user` t2,news t3
+        WHERE t1.user_id=t2.id
+        AND t1.news_id=t3.id
+    </select>
+    <delete id="deleteComment" parameterType="int">
+        delete from comment where id=#{id}
+    </delete>
+</mapper>

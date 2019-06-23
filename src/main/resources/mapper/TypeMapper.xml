@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.allan.mapper.TypeMapper" >
+
+    <!--判断name字段是否存在-->
+    <select id="checkType" parameterType="string" resultType="boolean">
+        <![CDATA[ select count(id) from type where name = #{name} ]]>
+    </select>
+
+    <select id="addType" resultType="type">
+        insert into type (name) values(#{name})
+    </select>
+
+    <select id="selectAll" resultType="type">
+        select * from type
+    </select>
+
+    <select id="selectOne" resultType="type">
+        select * from type where id=#{id}
+    </select>
+
+    <select id="deleteOne" resultType="type">
+        delete from type where id=#{id}
+    </select>
+
+    <select id="update" resultType="java.lang.Integer">
+        update type set name=#{name} where id=#{id}
+    </select>
+
+    <select id="checkTypeByName" resultType="java.lang.Integer">
+        select count(*) from type where id!=#{id} and name=#{name}
+    </select>
+
+    <select id="batchDelete">
+        delete from type where id in
+        <foreach collection="list" open="(" close=")" item="item" separator="," index="index">
+            #{item}
+        </foreach>
+    </select>
+
+    <select id="fuzzyQueryType" resultType="type">
+        select * from type
+        where
+        name like concat("%",#{typeName},"%")
+    </select>
+</mapper>
