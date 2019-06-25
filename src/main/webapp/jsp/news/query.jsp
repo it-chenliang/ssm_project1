@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="${path}/static/news/add.css">
     <link rel="stylesheet" href="${path}/static/bootstrap/button.css">
     <link rel="stylesheet" href="${path}/static/news/index.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
 </head>
 <body class="layui-layout-body">
 <div id="request-code" class="request-code">

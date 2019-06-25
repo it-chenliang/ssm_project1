@@ -53,6 +53,7 @@
             <mvc:exclude-mapping path="/user/register"/>
             <mvc:exclude-mapping path="/user/checkUsername"/>
             <bean class="cn.allan.interceptor.UserInterceptor"></bean>
+
         </mvc:interceptor>
         <!--管理员拦截器-->
         <mvc:interceptor>

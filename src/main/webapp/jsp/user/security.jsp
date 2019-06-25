@@ -12,6 +12,7 @@
     <title>闲看新闻个人中心</title>
     <link rel="stylesheet" href="${path}/static/webfront/userInfo.css">
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <script src="${path}/static/js/jquery-3.3.1.js"></script>
 </head>
 <body style="background-color: #f3f2f0;">

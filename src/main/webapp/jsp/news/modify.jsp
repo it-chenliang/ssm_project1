@@ -9,6 +9,7 @@
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <link rel="stylesheet" href="${path}/static/layui/css/layui.css">
     <link rel="stylesheet" href="${path}/static/news/add.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <style>
         .control-label{
             width: 100px;

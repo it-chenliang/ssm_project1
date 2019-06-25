@@ -54,4 +54,24 @@ public class ManagerServiceImpl implements ManagerService {
     public int deleteComment(Integer id) {
         return managerMapper.deleteComment(id);
     }
+
+    @Override
+    public int countNews() {
+        return managerMapper.countNews();
+    }
+
+    @Override
+    public int countType() {
+        return managerMapper.countType();
+    }
+
+    @Override
+    public int countUser() {
+        return managerMapper.countUser();
+    }
+
+    @Override
+    public int countComment() {
+        return managerMapper.countComment();
+    }
 }

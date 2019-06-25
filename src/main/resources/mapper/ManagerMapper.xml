@@ -46,4 +46,19 @@
     <delete id="deleteComment" parameterType="int">
         delete from comment where id=#{id}
     </delete>
+    <select id="countNews" resultType="java.lang.Integer">
+        select COUNT(*) FROM news
+    </select>
+    <select id="countType" resultType="java.lang.Integer">
+        select COUNT(*) FROM type
+    </select>
+    <select id="countUser" resultType="java.lang.Integer">
+        select COUNT(*) FROM user
+    </select>
+    <select id="countComment" resultType="java.lang.Integer">
+        select COUNT(*) FROM comment
+    </select>
+    <select id="countAllType" resultType="java.lang.Integer">
+        select count(*) from news where type_id=#{id}
+    </select>
 </mapper>

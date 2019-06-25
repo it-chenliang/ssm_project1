@@ -23,4 +23,12 @@ public interface ManagerService {
     List<Comment> selectAllComment();
 
     int deleteComment(Integer id);
+
+    int countNews();
+
+    int countType();
+
+    int countUser();
+
+    int countComment();
 }

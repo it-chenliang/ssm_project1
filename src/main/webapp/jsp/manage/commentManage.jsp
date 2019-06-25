@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>新闻管理系统后台</title>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <link rel="stylesheet" href="${path}/static/layui/css/layui.css">
     <link rel="stylesheet" href="${path}/static/manager/userManage.css">

@@ -6,6 +6,7 @@ import cn.allan.pojo.User;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
+import java.util.Map;
 
 public interface ManagerMapper {
 
@@ -50,4 +51,22 @@ public interface ManagerMapper {
      * 评论管理：删除评论
      */
     int deleteComment(@Param("id")Integer id);
+    /**
+     * 计算新闻条数
+     */
+    int countNews();
+    /**
+     * 计算新闻类别数量
+     */
+    int countType();
+    /**
+     * 计算用户数量
+     */
+    int countUser();
+    /**
+     * 计算评论数量
+     */
+    int countComment();
+
+    int countAllType(@Param("id")Integer id);
 }

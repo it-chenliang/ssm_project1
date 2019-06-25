@@ -10,9 +10,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>闲看新闻</title>
+    <title>闲看新闻-详情</title>
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <link rel="stylesheet" href="${path}/static/webfront/detail.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
 </head>
 <body>
     <jsp:include page="${path}/jsp/common/frontHeader.jsp"></jsp:include>

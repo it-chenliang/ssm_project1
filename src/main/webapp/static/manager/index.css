@@ -3,6 +3,59 @@
     height: auto;
     padding: 20px;
 }
+.platform-statistics{
+    width: 100%;
+    height: 235px;
+}
+.platform-statistics>div{
+    float: left;
+}
+.statistics-count{
+    width: 500px;
+    height: 235px;
+}
+.statistics-count li{
+    float: left;
+    width: 220px;
+    height: 110px;
+    margin: 0 20px 15px 0;
+    padding: 20px;
+    cursor: pointer;
+}
+.statistics-count li>div{
+    float: left;
+    color: #FFFFFF;
+}
+.count-item-left{
+    width: 50px;
+    height: 70px;
+    text-align: center;
+}
+.glyphicon-list-alt{
+    font-size: 45px;
+    line-height: 70px;
+    /*color: #949FB1;*/
+    opacity: 0.5;
+}
+.count-item-right{
+    margin-left: 20px;
+    height: 70px;
+}
+.statistics-charts{
+    width: 380px;
+    height: 100%;
+    background-color: #ecf0f5;
+}
+.statistics-charts-header{
+    height: 40px;
+    border-bottom: 1px solid #DDDDDD;
+    line-height: 40px;
+    color: #777;
+    padding: 0 10px;
+}
+.glyphicon-globe{
+    margin-right: 15px;
+}
 .user-detail{
     width: 100%;
     height: auto;
@@ -31,7 +84,7 @@ input[type='text'],input[type='date'],input[type='email']{
     outline: none;
     border:none;
     border-right: 1px solid #DDDDDD;
-    color: #ffffff;
+    color: #578ebe;
 }
 .btn{
     height: 40px;

@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="${path}/static/webfront/userInfo.css">
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <script src="${path}/static/js/jquery-3.3.1.js"></script>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
 </head>
 <body style="background-color: #f3f2f0;">
     <jsp:include page="${path}/jsp/common/frontHeader.jsp"></jsp:include>
@@ -29,7 +30,14 @@
                     </script>
                 </div>
                 <div class="userInfo-menu-header-name">
-                    <label>奶油味拥抱</label>
+                    <label id="nickname"></label>
+                    <script>
+                        if("${sessionScope.user.nickname}"==""){
+                            $("#nickname").text('闲看网友');
+                        }else{
+                            $("#nickname").text('${sessionScope.user.nickname}');
+                        }
+                    </script>
                 </div>
             </div>
             <ul class="userInfo-bar">

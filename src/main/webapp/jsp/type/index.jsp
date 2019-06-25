@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="${path}/static/layui/css/layui.css">
     <link rel="stylesheet" href="${path}/static/type/index.css">
     <script src="${path}/static/js/checkbox.js"></script>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">

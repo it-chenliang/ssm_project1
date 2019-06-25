@@ -32,14 +32,13 @@ input[type='text'],input[type='date']{
     outline: none;
     border:none;
     border-right: 1px solid #DDDDDD;
-    color: #ffffff;
+    color: #578ebe;
 }
 .btn{
     height: 40px;
     width: 100px;
     background-color: #DDDDDD;
     margin-right: 30px;
-    color: #ffffff;
 }
 .security-manage{
     width: 100%;

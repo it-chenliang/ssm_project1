@@ -8,10 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>闲看新闻后台-登录</title>
     <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="${path}/static/webfront/validationEngine.jquery.css" type="text/css"/>
     <link rel="stylesheet" href="${path}/static/webfront/managerLogin.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <script src="${path}/static/js/jquery-3.3.1.js" type="text/javascript"></script>
     <script src="${path}/static/js/jquery.cookie.js"></script>
     <script src="${path}/static/js/jquery.validationEngine.js" type="text/javascript" charset="utf-8"></script>

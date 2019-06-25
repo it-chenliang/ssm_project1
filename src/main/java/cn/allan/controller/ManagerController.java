@@ -1,10 +1,12 @@
 package cn.allan.controller;
 
+import cn.allan.mapper.ManagerMapper;
 import cn.allan.pojo.Comment;
 import cn.allan.pojo.Manager;
-import cn.allan.pojo.News;
+import cn.allan.pojo.Type;
 import cn.allan.pojo.User;
 import cn.allan.service.ManagerService;
+import cn.allan.service.TypeService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +19,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 @Controller
 @RequestMapping("/manage")
@@ -27,6 +28,10 @@ public class ManagerController {
 
     @Autowired
     private ManagerService managerService;
+    @Autowired
+    private ManagerMapper managerMapper;
+    @Autowired
+    private TypeService typeService;
 
     /**
      * 首页：接收session中存入的manager的username：后台
@@ -154,5 +159,36 @@ public class ManagerController {
     public String deleteComment(Integer id){
         managerService.deleteComment(id);
         return "redirect:/manage/commentManage";
+    }
+    /**
+     * 计算新闻数量
+     */
+    @RequestMapping("/count")
+    @ResponseBody
+    public Map<String,Integer> count(){
+        Map<String,Integer> map = new HashMap<>();
+        //新闻条数
+        map.put("news",managerService.countNews());
+        //新闻类别
+        map.put("type",managerService.countType());
+        //用户数量
+        map.put("user",managerService.countUser());
+        //评论数量
+        map.put("comment",managerService.countComment());
+        return map;
+    }
+    /**
+     * 获取type对应的新闻条数：绘制饼状图
+     * @return
+     */
+    @RequestMapping("/countType")
+    @ResponseBody
+    public Map<String,Integer> countType(){
+        Map<String,Integer> map = new HashMap<>();
+        List<Type> list1 = typeService.selectAll();
+        for(int i=0;i<list1.size();i++){
+            map.put(list1.get(i).getName(),managerMapper.countAllType(list1.get(i).getId()));
+        }
+        return map;
     }
 }

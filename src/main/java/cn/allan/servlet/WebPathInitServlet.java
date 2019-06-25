@@ -11,7 +11,7 @@ public class WebPathInitServlet extends HttpServlet {
 
     @Override
     public void init(ServletConfig config) throws ServletException {
-        //在整体应用上下文当中存储了一个ctx的值，用它来引用上下文路径
+        //在整体应用上下文当中存储了一个path的值，用它来引用上下文路径
         config.getServletContext().setAttribute("path",
                 config.getServletContext().getContextPath());
         super.init(config);

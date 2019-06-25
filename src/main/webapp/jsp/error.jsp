@@ -9,6 +9,7 @@
 <html>
 <head>
     <title>403 Forbidden</title>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <style>
         .container{
             width: 100%;

@@ -44,7 +44,6 @@ public class NewsController {
     @RequestMapping("/type")
     @ResponseBody
     public List<Type> type(){
-        System.out.println("正在进行查询所有类别.............");
         List<Type> list = typeService.selectAll();
         return list;
     }

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="${path}/static/layui/css/layui.css">
     <link rel="stylesheet" href="${path}/static/manager/index.css">
     <link rel="stylesheet" href="${path}/static/manager/security.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
 </head>
 <body class="layui-layout-body">
 <div class="layui-layout layui-layout-admin">
@@ -41,8 +42,8 @@
                             <span id="confirmError"></span>
                         </li>
                         <li>
-                            <button type="button" id="pwdChang" class="btn">更改密码</button>
-                            <button type="reset" class="btn">取消</button>
+                            <button type="button" id="pwdChang" class="btn" style="background-color: #e35b5a;">更改密码</button>
+                            <button type="reset" class="btn" style="background-color: #e35b5a;">取消</button>
                         </li>
                     </ul>
                 </form>

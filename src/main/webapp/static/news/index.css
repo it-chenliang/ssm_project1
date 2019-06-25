@@ -82,8 +82,9 @@ b{
     line-height: 42px;
     border-bottom: 1px solid #eee;
     overflow: hidden;
-    background-color: #F8F8F8;
+    background-color: #949FB1;
     border-radius: 2px 2px 0 0;
+    color: #FFFFFF;
 }
 .news-name{
     float: left;
@@ -100,7 +101,7 @@ b{
 .request-code-content{
     height: 450px;
     width: 100%;
-    border: 1px solid lightgray;
+    border: 1px solid #949FB1;
 }
 
 .news-info{

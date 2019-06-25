@@ -9,6 +9,7 @@
     <title>闲看新闻</title>
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <link rel="stylesheet" href="${path}/static/webfront/index.css">
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <style>
         .body a:link,.body a:visited{
             text-decoration: none;

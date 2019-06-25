@@ -10,10 +10,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>闲看新闻-类别</title>
     <link rel="stylesheet" href="${path}/static/webfront/typeInfo.css">
     <jsp:include page="${path}/jsp/common/resources.jsp"></jsp:include>
     <script src="${path}/static/js/jquery-3.3.1.js"></script>
+    <link rel="shortcut icon" href="${path}/static/images/xiankan.jpg">
     <style>
         .body a{
             text-decoration: none;
